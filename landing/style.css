@@ -23,7 +23,7 @@ nav ul{
     display: flex;
     justify-content: flex-start;
     align-items: left;
-    padding-left: 60px;
+    /*padding-left: 60px;*/
 }
 
 nav li{
@@ -45,9 +45,13 @@ nav a:hover{
     color: rgb(120,56,150);
 }
 
+nav li:first-child{
+    padding-left: 70px;
+}
+
 nav li:last-child{
     margin-left: 150px;
-    padding-left: 500px;
+    padding-left: 700px;
 }
 
 
