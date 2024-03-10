@@ -21,9 +21,9 @@ nav ul{
     width: 100%;
     list-style: none;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: left;
-    /*padding-left: 70px;*/
+    padding-left: 60px;
 }
 
 nav li{

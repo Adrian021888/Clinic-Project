@@ -21,9 +21,9 @@ nav ul{
     width: 100%;
     list-style: none;
     display: flex;
-    justify-content: flex-end;
-    align-items: left;
-    /*padding-left: 70px;*/
+    justify-content: flex-start;
+    align-items: right;
+    padding-left: 50px;
 }
 
 nav li{
@@ -43,11 +43,6 @@ nav a:hover{
     /*background-color: rgb(27,22,55);*/
     text-decoration: underline;
     color: rgb(120,56,150);
-}
-
-nav li:last-child{
-    margin-left: 150px;
-    padding-left: 500px;
 }
 
 
