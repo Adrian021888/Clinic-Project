@@ -21,9 +21,12 @@ nav ul{
     width: 100%;
     list-style: none;
     display: flex;
-    justify-content: flex-end;
-    align-items: left;
-    /*padding-left: 70px;*/
+    justify-content: flex-start;
+    align-items: right;
+}
+
+nav li:first-child{
+    padding-left: 70px;
 }
 
 nav li{
@@ -40,16 +43,9 @@ nav a{
 }
 
 nav a:hover{
-    /*background-color: rgb(27,22,55);*/
     text-decoration: underline;
     color: rgb(120,56,150);
 }
-
-nav li:last-child{
-    margin-left: 150px;
-    padding-left: 500px;
-}
-
 
 .fwh-slide{
     position: relative;
@@ -60,16 +56,30 @@ nav li:last-child{
     background-repeat: no-repeat;
     background-position: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-left: 100px;
-    padding-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.fwh-slide .content {
-    padding: 20px; /* Add padding for better readability */
+.login-option{
+    width: 400px;
+    height: 400px;
+    background-color: #ddd;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
-.fwh-slide p {
-    font-weight: bold; /* Make the text bold */
-    font-size: 96px; /* Set the font size to be big */
-    text-align: left; /* Align the text to the left */
+.login-option a{
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.login-option:hover {
+    background-color: rgb(216, 31, 31);
 }
