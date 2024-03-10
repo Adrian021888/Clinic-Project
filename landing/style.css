@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    background-color:  rgb(73,81,157);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav{
+    background-color: white;
+    border-bottom: 1px solid rgb(73,81,157); /* Add a 2px solid underline */
+}
+
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: left;
+    /*padding-left: 70px;*/
+}
+
+nav li{
+    height: 80px;
+}
+
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: rgb(73,81,157);
+}
+
+nav a:hover{
+    /*background-color: rgb(27,22,55);*/
+    text-decoration: underline;
+    color: rgb(120,56,150);
+}
+
+nav li:last-child{
+    margin-left: 150px;
+    padding-left: 500px;
+}
+
+
+.fwh-slide{
+    position: relative;
+    height: 98vh;
+    background-image: url(mainbg.png);
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 100px;
+    padding-top: 100px;
+}
+
+.fwh-slide .content {
+    padding: 20px; /* Add padding for better readability */
+}
+
+.fwh-slide p {
+    font-weight: bold; /* Make the text bold */
+    font-size: 96px; /* Set the font size to be big */
+    text-align: left; /* Align the text to the left */
+    line-height: 1;
+}
+
+.fwh-slide .sub-text {
+    line-height: 1.5;
+    font-weight: normal; /* Make the text normal */
+    font-size: 16px; /* Set the font size to be smaller */
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: rgb(120,56,150);
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.about{
+    position: relative;
+    height: 100vh;
+    background-color:white;
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 100px;
+    padding-top: 100px;
+}
+
+.services{
+    position: relative;
+    height: 100vh;
+    background-color:rgb(73,81,157);
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 100px;
+    padding-top: 100px;
+}
