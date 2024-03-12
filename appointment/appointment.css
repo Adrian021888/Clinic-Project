@@ -7,7 +7,7 @@ input,
 textarea {
     width: 100%; /* Make the fields expand to fill the container */
     padding: 10px; /* Adjust the padding inside the fields */
-    border: 1px solid #ccc; /* Add a border to the fields */
+    border: 1px solid #919191; /* Add a border to the fields */
     border-radius: 20px; /* Adjust the roundness of the borders */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     margin: 8px 0; /* Adjust the top and bottom margin */
