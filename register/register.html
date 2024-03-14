@@ -45,12 +45,26 @@
                         <h2>Personal Information</h2>
                         <input type="text" id="name" name="name" placeholder="Name"><br>
                         <input type="text" id="lastname" name="lastname" placeholder="Last Name"><br>
+                        <input type="text" id="age" name="age" placeholder="Age"><br>
+                            <select id="gender" name="gender">
+                                <option value="" disabled selected>Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
                         <input type="text" id="SSN" name="SSN" placeholder="SSN"><br>
                         <button onclick="prevStep()">Previous</button>
                         <button onclick="nextStep()">Next</button>
                     </div>
 
                     <div class="step" id="step4">
+                        <h3>Create an account</h3>
+                        <h2>Insurance Information</h2>
+                        <input type="text" id="insurance" name="insurance" placeholder="Insurance provider (optional)"><br>
+                        <button onclick="prevStep()">Previous</button>
+                        <button onclick="nextStep()">Next</button>
+                    </div>
+
+                    <div class="step" id="step5">
                         <h3>Create an account</h3>
                         <h2>Step 3</h2>
                         <textarea id="message" name="message" rows="4" placeholder="Message"></textarea><br>
