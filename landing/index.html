@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="popup-overlay" class="popup-overlay">
+        <div class="popup">
+            <span class="close-btn" onclick="closePopup()">X</span>
+            <img src="popup.png" alt="Popup Image">
+            <p class="bottom-text">
+                <input type="checkbox" id="dont-show-again"> Don't show again
+            </p>
+        </div>
+    </div>  
     <nav>
         <ul>
             <li><a href="index.html"><img src="logo.png" alt="Logo"></a></li>
@@ -40,5 +49,6 @@
             This is some text<br>
         </p>
     </section>
+    <script src="script.js"></script>
 </body>
 </html>
