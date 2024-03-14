@@ -12,7 +12,6 @@ textarea {
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     margin: 8px 0; /* Adjust the top and bottom margin */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /*background-color: gainsboro;*/
 }
 
 /* Add margin to the labels */
@@ -149,3 +148,15 @@ button {
   button:hover {
     background-color: #0056b3;
   }
+
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(73,81,157);
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin: 8px 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #fff; /* Adjust background color */
+    color: rgb(73,81,157); /* Adjust text color */
+}
