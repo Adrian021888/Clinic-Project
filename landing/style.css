@@ -101,21 +101,6 @@ nav li:last-child{
     background-color: #0056b3;
 }
 
-
-.services{
-    position: relative;
-    height: 100vh;
-    background-color:rgb(73,81,157);
-    box-sizing: border-box;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-left: 100px;
-    padding-top: 100px;
-}
-
-
 .popup-overlay {
     display: none;
     position: fixed;
@@ -196,10 +181,67 @@ nav li:last-child{
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 24px;
-    color: rgb(73,81,157);;
+    color: rgb(73,81,157);
 }
 
 .about-text p {
     font-size: 18px;
     color: rgb(0, 0, 0);
 }
+
+.services{
+    position: relative;
+    height: 100vh;
+    background-color:rgb(255, 255, 255);
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 100px;
+    padding-top: 100px;
+}
+
+
+.services-container {
+    display: flex;
+    justify-content: center; /* Align items to the center horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+}
+
+
+.service-item {
+    flex: 0 0 calc(30% - 20px); /* Each item takes up one-third of the container minus the margin */
+    margin: 0 10px 20px; /* Adjust margin for spacing between items */
+    text-align: center; /* Center align items */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.service-item img {
+    width: 100%; 
+    max-width: 100%; 
+    border-radius: 10px; 
+}
+
+.service-item h3 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 10px; /* Add margin for spacing between title and text */
+    text-align: left; /* Align text to the left */
+    margin-bottom: 12px;
+}
+
+.service-item p {
+    font-size: 16px;
+    text-align: left; 
+}
+
+.services-title {
+    text-align: center; /* Center align the title */
+    font-weight: bold;
+    color: rgb(73,81,157);
+    font-size: 24px;
+    margin-bottom: 20px; /* Add margin for spacing between title and items */
+    margin-bottom: 50px;
+}
+
