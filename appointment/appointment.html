@@ -15,44 +15,83 @@
     </nav>
 
     <div class="container">
-        <div class="box">
-          <form id="multi-step-form">
-            <div class="step active" id="step1">
-              <h2>CONTACT INFORMATION</h2>
-              <label for="name">Name</label><br>
-              <input type="text" id="name" name="name"><br>
-              <label for="lastname">Last Name</label><br>
-              <input type="text" id="lastname" name="lastname"><br>
-              <label for="address">Address</label><br>
-              <input type="text" id="address" name="address"><br>
-              <label for="email">Email</label><br>
-              <input type="email" id="email" name="email"><br>
-              <label for="phone">Phone Number</label><br>
-              <input type="tel" id="phone" name="phone"><br>
-              <button onclick="nextStep()">Next</button>
+        <div class="content">
+            <div class="form-container">
+                <div class="box">
+                    
+                    <form id="multi-step-form">
+                        
+
+                    <div class="step active" id="step1">
+                        <h3>Schedule a visit</h3>
+                        <h2>Account Information</h2>
+                        <input type="text" id="email" name="email" placeholder="Email"><br>
+                        <input type="text" id="password" name="password" placeholder="Password"><br>
+                        <button onclick="nextStep()">Next</button>
+                    </div>
+
+                    <div class="step" id="step2">
+                        <h3>Schedule a visit</h3>
+                        <h2>Contact Information</h2>
+                        <input type="text" id="address" name="address" placeholder="Address"><br>
+                        <input type="email" id="email" name="email" placeholder="Email"><br>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number"><br>
+                        <button onclick="prevStep()">Previous</button>
+                        <button onclick="nextStep()">Next</button>
+                    </div>
+
+                    <div class="step" id="step3">
+                        <h3>Schedule a visit</h3>
+                        <h2>Personal Information</h2>
+                        <input type="text" id="name" name="name" placeholder="Name"><br>
+                        <input type="text" id="lastname" name="lastname" placeholder="Last Name"><br>
+                        <input type="text" id="age" name="age" placeholder="Age"><br>
+                            <select id="gender" name="gender">
+                                <option value="" disabled selected>Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        <input type="text" id="SSN" name="SSN" placeholder="SSN"><br>
+                        <button onclick="prevStep()">Previous</button>
+                        <button onclick="nextStep()">Next</button>
+                    </div>
+
+                    <div class="step" id="step4">
+                        <h3>Schedule a visit</h3>
+                        <h2>Insurance Information</h2>
+                        <input type="text" id="insurance" name="insurance" placeholder="Insurance provider (optional)"><br>
+                        <button onclick="prevStep()">Previous</button>
+                        <button onclick="nextStep()">Next</button>
+                    </div>
+
+                    <div class="step" id="step5">
+                        <h3>Schedule a visit</h3>
+                        <h2>Step 3</h2>
+                        <textarea id="message" name="message" rows="4" placeholder="Message"></textarea><br>
+                        <button onclick="prevStep()">Previous</button>
+                        <button type="submit" onclick="generateRandomUserId(event)">Submit</button>
+                    </div>
+                </form>
             </div>
-      
-            <div class="step" id="step2">
-              <h2>Step 2</h2>
-              <label for="city">placeholder:</label><br>
-              <input type="text" id="city" name="city"><br>
-              <label for="zip">placeholder:</label><br>
-              <input type="text" id="zip" name="zip"><br>
-              <button onclick="prevStep()">Previous</button>
-              <button onclick="nextStep()">Next</button>
-            </div>
-      
-            <div class="step" id="step3">
-              <h2>Step 3</h2>
-              <label for="message">Message:</label><br>
-              <textarea id="message" name="message" rows="4"></textarea><br>
-              <button onclick="prevStep()">Previous</button>
-              <button type="submit">Submit</button>
-            </div>
-          </form>
         </div>
-      </div>
-      
-      <script src="script.js"></script>
+        <div class="image-container">
+            <img src="../register/registerbg.png" alt="Image">
+        </div>
+    </div>
+</div>
+  
+<script src="script.js"></script>
+<script>
+    function generateRandomUserId() {
+        // Generate a random number
+        const randomNumber = Math.floor(Math.random() * 10000);
+        
+        // Construct a user ID using only the random number
+        const userId = randomNumber;
+        
+        // Display the generated user ID
+        alert('Your generated user ID: ' + userId);
+    }
+</script>
 </body>
 </html>
