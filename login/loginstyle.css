@@ -1,85 +1,84 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    max-height: 50vh;
-    background-color:  rgb(73,81,157);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+body {
+    font-family: Arial, sans-serif;
+    background-color:rgb(255, 255, 255);
 }
 
-nav{
+nav {
     background-color: white;
-    border-bottom: 1px solid rgb(73,81,157); /* Add a 2px solid underline */
+    border-bottom: 1px solid rgb(73,81,157);
 }
 
-nav ul{
+nav ul {
     width: 100%;
     list-style: none;
     display: flex;
     justify-content: flex-start;
-    align-items: right;
+    align-items: left;
 }
 
-nav li:first-child{
-    padding-left: 70px;
-}
-
-nav li{
+nav li {
     height: 80px;
 }
 
-nav a{
+nav a {
     height: 100%;
     padding: 0 30px;
     text-decoration: none;
     display: flex;
     align-items: center;
     color: rgb(73,81,157);
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-nav a:hover{
+nav a:hover {
     text-decoration: underline;
     color: rgb(120,56,150);
 }
 
-.fwh-slide{
-    position: relative;
-    height: 98vh;
-    background-color:white;
-    box-sizing: border-box;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+nav li:first-child {
+    padding-left: 70px;
+}
+
+.container {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 100vh;
 }
 
-.login-option{
-    width: 400px;
-    height: 400px;
-    background-color: #ddd;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.login-option a{
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    font-weight: bold;
+.image-container {
     text-align: center;
 }
 
-.login-option:hover {
-    background-color: rgb(216, 31, 31);
+.image-container img {
+    height: 600px; /* Adjust the height to make the images larger */
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.image-container p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.image-container a {
+    padding: 10px 20px;
+    background-color: rgb(120,56,150); 
+    color: #fff; 
+    border: none;
+    border-radius: 20px; 
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.image-container a:hover {
+    background-color: #0056b3; 
 }

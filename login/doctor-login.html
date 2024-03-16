@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="loginstyle.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="doctor-login.css">
 </head>
 <body>
     <nav>
@@ -14,11 +14,23 @@
         </ul>
     </nav>
 
-    <section class = "fwh-slide">
-        <p>
-            Your eyes <br>
-            matter to us! <br>
-        </p>
-    </section>
+    <div class="container">
+        <div class="image-container">
+            <img src="login image.png" alt="Image">
+        </div>
+        <div class="login-container">
+            <h2>Please Login</h2>
+            <form action="#">
+                <div class="input-group">
+                    <input type="text" placeholder="Email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="../register/register.html">Register</a></p>
+        </div>
+    </div>
 </body>
 </html>
