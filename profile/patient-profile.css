@@ -70,3 +70,5 @@ button {
     button:hover {
         background-color: #0056b3;
     }
+
+    /*make modify and save button changes work, no info entered until you press modify button*/
