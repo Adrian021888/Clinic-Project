@@ -66,10 +66,28 @@
 
                     <div class="step" id="step5">
                         <h3>Schedule a visit</h3>
-                        <h2>Step 3</h2>
-                        <textarea id="message" name="message" rows="4" placeholder="Message"></textarea><br>
+                        <h2>Appointment Information</h2>
+                        <select id="location" name="location">
+                            <option value="" disabled selected>Select a location</option>
+                            <option value="Glasses">Houston</option>
+                            <option value="Lasik">Austin</option>
+                            <option value="ICL">San Antonio</option>
+                        </select><br>
+                        <select id="appointmentType" name="appointmentType" onchange="showPermissionBox()">
+                            <option value="" disabled selected>Select appointment type</option>
+                            <option value="Glasses">Get your glasses</option>
+                            <option value="Lasik">Lasik</option>
+                            <option value="ICL">ICL</option>
+                        </select><br>
+                        <div id="permissionBox" style="display: none;">
+                            <p>Do you have permission from your main physician to perform this procedure?</p>
+                            <label><input type="radio" name="permission" value="Yes"> Yes</label>
+                            <label><input type="radio" name="permission" value="No"> No</label>
+                        </div>
+                        <label for="appointmentDate">Select appointment date and time:</label><br>
+                            <input type="datetime-local" id="appointmentDate" name="appointmentDate"><br> <!-- Input for date and time -->
                         <button onclick="prevStep()">Previous</button>
-                        <button type="submit" onclick="generateRandomUserId(event)">Submit</button>
+                        <button type="submit" onclick="generateRandomAppointmentId(event)">Submit</button>
                     </div>
                 </form>
             </div>
@@ -79,18 +97,41 @@
         </div>
     </div>
 </div>
+
+<script>
+    function showPermissionBox() {
+        var appointmentType = document.getElementById("appointmentType").value;
+        var permissionBox = document.getElementById("permissionBox");
+
+        if (appointmentType === "Lasik" || appointmentType === "ICL") {
+            permissionBox.style.display = "block";
+        } else {
+            permissionBox.style.display = "none";
+        }
+    }
+</script>
   
 <script src="script.js"></script>
 <script>
-    function generateRandomUserId() {
-        // Generate a random number
-        const randomNumber = Math.floor(Math.random() * 10000);
+    function generateRandomAppointmentId(event) {
+        event.preventDefault(); // Prevent the form from submitting
         
-        // Construct a user ID using only the random number
-        const userId = randomNumber;
-        
-        // Display the generated user ID
-        alert('Your generated user ID: ' + userId);
+        // Get the permission radio button value
+        var permission = document.querySelector('input[name="permission"]:checked');
+
+        if (!permission || permission.value !== 'No') {
+            // Generate a random number
+            const randomNumber = Math.floor(Math.random() * 10000);
+            
+            // Construct an appointment ID using only the random number
+            const appointmentId = randomNumber;
+            
+            // Display the generated appointment ID
+            alert('Your generated appointment ID: ' + appointmentId);
+        } else {
+            // If permission is 'No', display an alert message
+            alert('You cannot proceed without permission from your main physician.');
+        }
     }
 </script>
 </body>
