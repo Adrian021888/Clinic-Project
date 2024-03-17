@@ -1,14 +1,14 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Profile</title>
-    <link rel="stylesheet" href="patient-profile.css">
+    <title>Administration Profile</title>
+    <link rel="stylesheet" href="admin-profile.css">
 </head>
 <body>
     <div class="container">
-        <h1>Patient Profile Information</h1>
+        <h1>Administration Profile Information</h1>
         <div class="info">
             <div class="field-container">
                 <div class="field">
@@ -44,7 +44,21 @@
         <div class="buttons">
             <button id="modifyButton">Modify Info</button>
             <button id="saveButton">Save Changes</button>
+            <button id="reportsButton">Reports</button>
         </div>
     </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="reportsContent"></div>
+        </div>
+    </div>
+
+    <!-- call javaScript code -->
+    <script src="admin-profile.js"></script>
+
+
 </body>
 </html>
+
