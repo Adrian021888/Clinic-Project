@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function generateReports() {
         // clinic income report
-        var clinicIncomeReport = "Clinic Income Report: $ "; 
+        var clinicIncomeReport = "Clinic Income Report: $ ";
         // doctor salaries report
         var doctorSalariesReport = "Doctor Salaries Report: $"; 
         // number of patients report

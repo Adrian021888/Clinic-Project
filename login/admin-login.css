@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:rgb(73,81,157);
+}
+
+nav{
+    background-color: white;
+    border-bottom: 1px solid rgb(73,81,157); /* Add a 2px solid underline */
+}
+
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    /*padding-left: 60px;*/
+}
+
+nav li{
+    height: 80px;
+}
+
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: rgb(73,81,157);
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav a:hover{
+    /*background-color: rgb(27,22,55);*/
+    text-decoration: underline;
+    color: rgb(120,56,150);
+}
+
+nav li:first-child{
+    padding-left: 70px;
+}
+
+
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    height: fit-content;
+    max-width: 100%;
+    max-height: 100%;
+    
+}
+
+.login-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding-bottom: 20px; 
+}
+
+.login-container button {
+    padding: 10px 20px;
+    background-color: rgb(120,56,150); 
+    color: #fff; 
+    border: none;
+    border-radius: 20px; 
+    cursor: pointer;
+    display: block; 
+    margin: 0 auto; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.login-container button:hover {
+    background-color: #0056b3; 
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-options button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-options button:hover {
+    background-color: #0056b3;
+}
+
+.login-container p {
+    margin-top: 20px; 
+}
+
+.login-container a {
+    color: #007bff; 
+    text-decoration: none; 
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
