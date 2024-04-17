@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PHP Reports</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <script type="text/javascript" src="assets/js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="container-fluid">
+            <div class="navbar-header col-lg-10">
+
+                <a class="navbar-brand" href="" style="font-weight: bold;
+                font-size: 24px; ">MEDICAL REPORTS</a>
+            </div>
+        </div>
+    </nav>
+    <?php include('config/db.php');?>
+    <div class="container">
+        <div class="row">
+        <form method="POST" action="report.html">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label control-label>Choose the standard</label>
+                    <select class="form-control"  name="standard">
+                        <option>select</option>
+                    <?php
+                        $query ="SELECT *
+                        FROM tbl_standard";
+                        $result= mysqli_query($conn, $query) or die ('error');
+                        if(mysqli_num_rows($result)> 0){
+                            while($row = mysqli_fetch_assoc($result)){?>
+                                   <option value=<?php echo $row['id']?>><?php
+                                       echo $row['standard']?></option>
+                            <?php }
+                        }
+                    ?>
+                    </select>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label control-label">Choose the stream</label>
+                    <select class="form-control"name="stream">
+                        <option><Select></option>
+                        <?php
+                        $query ="SELECT *
+                        FROM tbl_stream";
+                        $result= mysqli_query($conn, $query) or die ('error');
+                        if(mysqli_num_rows($result)> 0){
+                            while($row = mysqli_fetch_assoc($result)){?>
+                                   <option value=<?php echo $row['id']?>><?php
+                                      echo $row['stream']?></option>
+                                    <?php }
+
+                        }
+                        ?>
+
+                    </select>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <div  class="form-group">
+                    <label control-label">Gender</label>
+                    <select class="form-control" name="gender">
+                        <option><Select></option>
+                        <?php
+                        $query = "SELECT *
+                        FROM tbl_gender";
+                        $result= mysqli_query($conn, $query) or die ('error');
+                        if(mysqli_num_rows($result) > 0){
+                            while($row = mysqli_fetch_assoc($result)){?>
+                                <option value=<?php echo $row['id']?>><?php
+                                    echo $row['gender']?></option>
+                            
+                            <?php }
+                        }
+
+                        ?>
+                    </select>
+                </div>
+
+
+            </div>
+            <div class="col-md-3">
+                <label control-label style="padding-top: 40px;"></label>
+                <input type="submit" name="submit" class="btn btn-primary" id="
+                submit" value="submit">
+
+
+            
+        </div>
+        </form>
+    </div>
+    <hr>
+    <div class="row">
+        <table class="table">
+            <thread>
+                <tr>
+                    <th scope="col">sl. No.</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">standard</th>
+                    <th scope="col">stream</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mobile</th>
+
+
+
+                </tr>
+            </thread>
+            <tbody>
+                <?php
+
+                    $limit = 5;
+                    $getQuery = "select  * from tbl_data";
+                    $result = mysqli_query($conn, $getQuery);
+                    $total_rows = mysqli_num_rows ($result);
+                    $total_pages = ceil ($total_rows / $limit);
+                    if (!isset ($_GET['page'])){
+                        $page_number = 1;
+                    }  else {
+                        $page_number * $_Get['page'];
+                    }
+                    $initial_page = ($page_number -1) * $limit;
+                    if(!isset($_POST['submit'])){
+                        $qetQuery = "SELECT tbl_data.id,tbl_data.fname,
+                        tbl_data.lname, tbl_data.email, tbl_data.mobile,
+                        tbl_standard.standard, tbl_stream.stream, 
+                        tbl_gender.gender FROM tbl_data JOIN
+                        tbl_standard ON tbl_standard.id = tbl_data.standard
+                         JOIN tbl_stream ON tbl_stream.id = tbl_data.stream JOIN 
+                         tbl_gender ON tbl_gender.id = tbl_data.gender LIMIT "
+                         .$initial_page. ',' . $limit;
+                    getData($getQuery);
+                   }
+                   else if(isset($_POST['submit']) && isset($_POST['standard'])
+                   && isset($_POST['stream']) && isset($_POST['gender'])){
+                    $standard = $_POST['standard'];
+                    $stream = $_POST['stream'];
+                    $gender = $_POST['gender'];
+                    $getQueery = "SELECT tbl_data.id, tbl_data.fname,
+                     tbl_data.lname, tbl_data.email, tbl_data.mobile,
+                      tbl_standard.standard, tbl_stream.stream, tbl_gender.gender
+                      FROM tbl_data
+                      JOIN tbl_standard ON tbl_standard.id = tbl_data.standard
+                      JOIN tbl_stream ON tbl_stream.id = tbl_data.stream
+                      JOIN tbl_gender ON tbl_gender.id = tbl_data.gender
+                      WHERE tbl_standard.id = $standard
+                      AND tbl_stream.id = $stream
+                      AND tbl_genger.id = $gender";
+                      getData($getQuery);
+                   }
+                   ?>
+
+                    
+
+            </tbody>
+        </table>
+        <?php
+            for($page_number * 1; $page_number<= $total_pages; $page_number ++)
+            {
+                echo '<a href = "report.html?page='  $page_number  '"
+                     style="  background: #337ab7;
+            text-decoration: none;
+            margin-right: 1px;
+            color: #fff;
+                padding: 5px 10px;"> '  $page_number  '</a>';
+
+            }
+            ?>
+
+    </div>
+  </div>
+
+</body>
+</html>
+
+<?php
+function getData($sql){
+    include('config/db.php');
+
+    $result = mysqli_query($conn, $sql);
+    if(mysqli_num_rows($result)>0){
+        while($row = mysqli_fetch_array($result)){
+            echo '<tr>
+            <td>' . $row['id']. '</td>
+            <td>' . $row['fname']. '</td>
+            <td>' . $row['lname']. '</td>
+            <td>' . $row['standard']. '</td>
+            <td>' . $row['stream']. '</td>
+            <td>' . $row['gender']. '</td>
+            <td>' . $row['email']. '</td>
+            <td>' . $row['mobile']. '</td>
+            </tr>';
+
+        }
+    }
+
+}
+
+?>
